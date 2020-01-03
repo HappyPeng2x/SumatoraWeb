@@ -3,3 +3,5 @@
 _site
 google-analytics.js
 .env
+Gemfile.lock
+.jekyll-cache

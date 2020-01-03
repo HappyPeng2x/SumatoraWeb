@@ -1,9 +1,4 @@
 // Font
-
-@each $google-font in $google-fonts {
-    @import url('https://fonts.googleapis.com/css?family=' + $google-font);
-}
-
 @font-face {
     font-family: 'Delius';
     src: url('../lib/font/Delius/Delius-Regular.ttf') format('truetype');
