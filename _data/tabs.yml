@@ -1,7 +1,0 @@
-# **NOTE**
-# 1. Empty strings are truthy.
-
-- id: tab-test
-  name: screenshots
-  fp: tab/screenshots.html
-  disabled: false

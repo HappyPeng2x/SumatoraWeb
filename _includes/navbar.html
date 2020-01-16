@@ -1,21 +1,37 @@
-<div class="nav-wrapper">
-      <span class="site-title">{{ site.title }}</span>
-      <a href="#" data-activates="mobile-navbar" class="button-collapse"><i class="mdi mdi-menu white-text"></i></a>
+<div class="collapse navbar-collapse" id="sumatoraNav">
+
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto">
+
+    {% if page.menu == 'Home' %}
+    
+    <li class="nav-item active">
+
+      {% else %}
+
+    <li class="nav-item">
+
+      {% endif %}
       
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="{{ '/' | prepend: site.baseurl }}" class="white-text">
-            <i class="mdi mdi-home left indigo-text text-lighten-3"></i>Home
-        </a></li>
-        <li><a href="https://github.com/{{ site.github_username }}/{{ site.github_project }}" class="white-text">
-            <i class="mdi mdi-github-circle left indigo-text text-lighten-3"></i>GitHub
-        </a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-navbar">
-        <li><a href="{{ '/' | prepend: site.baseurl }}" class="waves-effect waves-teal black-text">
-            <i class="mdi mdi-home left green-text"></i>Home
-        </a></li>
-        <li><a href="https://github.com/{{ site.github_username }}/{{ site.github_project }}" class="waves-effect waves-teal black-text">
-            <i class="mdi mdi-github-circle left red-text"></i>GitHub
-        </a></li>
-      </ul>
+      <a class="nav-link" href="{{ '/index' | prepend: site.baseurl }}">Home
+
+	{% if page.menu == 'Home' %}
+	
+	<span class="sr-only">(current)</span>
+
+	{% endif %}
+	
+      </a>
+    </li>
+     {% if page.menu == 'Screenshots' %}
+    
+    <li class="nav-item active">
+
+      {% else %}
+
+    <li class="nav-item">
+
+      {% endif %}
+      <a class="nav-link" href="{{ '/screenshots' | prepend: site.baseurl }}">Screenshots</a>
+    </li>
 </div>

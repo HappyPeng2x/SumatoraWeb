@@ -1,51 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
 
   {% include head.html %}
 
-  <body>
+  <body class="d-flex flex-column h-100"
 
-    <header class="site-header">
-      <nav class="nav-extended {{ site.header-color }}">
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark primary-color">
+
+	<a class="navbar-brand" href="#">Sumatora</a>
+	
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sumatoraNav" aria-controls="sumatoraNav" aria-expanded="false" aria-label="Toggle navigation">
+	   <span class="navbar-toggler-icon"></span>
+	</button>
+	
         {% include navbar.html %}
-
-        <div class="nav-content">
-          <ul class="tabs tabs-transparent">
-            <li class="tab"><a class="active" href="#tab-main">main</a></li>
-          {% for t in site.data.tabs %}
-            <li class="tab {% if t.disabled %}disabled{% endif %}"><a href="#{{ t.id }}">{{ t.name }}</a></li>
-          {% endfor %}
-          </ul>
-        </div>
       </nav>
     </header>
 
-  {% for t in site.data.tabs %}
-    <div id="{{ t.id }}">
-      {% include {{ t.fp }} %}
-    </div>
-  {% endfor %}
-
-    <div class="site-container" id="tab-main"> 
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+    <main role="main" class="mt-3 flex-shrink-0">
+      <div class="container">
+	{{ content }}
+	</div>
+    </main>
 
     {% include footer.html %}
 
-    <!-- scrolltop button -->
-    <button class="material-scrolltop waves-effect waves-light hide-on-small-only" type="button"><i class="mdi mdi-arrow-up-bold small white-text"></i></button>
-
-    <!-- jquery -->
-    <script type="text/javascript" src="{{ '/lib/jquery-min.js' | prepend: site.baseurl }}"></script>
-    <!-- materialize -->
-    <script src="{{ '/lib/materialize/js/materialize.min.js' | prepend: site.baseurl }}"></script>
-    <!-- Material ScrollTop plugin -->
-    <script src="{{ '/lib/material-scrolltop/material-scrolltop.js' | prepend: site.baseurl }}"></script>
-    <!-- main -->
-    <script src="{{ '/js/init.js' | prepend: site.baseurl }}"></script>
-    <script src="{{ '/js/main.js' | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ '/lib/mdb/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/lib/mdb/js/popper.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/lib/mdb/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/lib/mdb/js/mdb.min.js' | prepend: site.baseurl }}"></script>
   </body>
 
 </html>
